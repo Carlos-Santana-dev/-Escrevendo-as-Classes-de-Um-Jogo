@@ -1,0 +1,52 @@
+class Heroi:
+    def __init__(self, nome, idade, tipo):
+        self.nome = nome
+        self.idade = idade
+        self.tipo = tipo.lower()
+
+    def atacar(self):
+        if self.tipo == "mago":
+            ataque = "magia"
+        elif self.tipo == "guerreiro":
+            ataque = "espada"
+        elif self.tipo == "monge":
+            ataque = "artes marciais"
+        elif self.tipo == "ninja":
+            ataque = "shuriken"
+        else:
+            ataque = "um ataque desconhecido"
+
+        print(f"\n{self.nome}, o {self.tipo}, atacou usando {ataque}!")
+
+
+# Menu interativo
+def iniciar_jogo():
+    print("🧙‍♂️ Criação de Herói")
+    
+    nome = input("Digite o nome do herói: ")
+    idade = input("Digite a idade do herói: ")
+
+    print("\nEscolha o tipo do herói:")
+    print("1 - Mago")
+    print("2 - Guerreiro")
+    print("3 - Monge")
+    print("4 - Ninja")
+
+    tipo_opcao = input("Digite o número correspondente ao tipo: ")
+
+    tipos = {
+        "1": "mago",
+        "2": "guerreiro",
+        "3": "monge",
+        "4": "ninja"
+    }
+
+    tipo = tipos.get(tipo_opcao, "desconhecido")
+
+    heroi = Heroi(nome, idade, tipo)
+    heroi.atacar()
+
+
+# Executar o menu
+iniciar_jogo()
+# Escreva o seu código aqui :-)
